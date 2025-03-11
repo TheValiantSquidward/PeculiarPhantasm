@@ -1,6 +1,7 @@
 package net.thevaliantsquidward.peculiarphantasm;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -11,6 +12,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.thevaliantsquidward.peculiarphantasm.entity.ModEntities;
+import net.thevaliantsquidward.peculiarphantasm.entity.client.TroodonRenderer;
 import org.slf4j.Logger;
 
 
@@ -26,7 +29,7 @@ public class PeculiarPhantasm
         IEventBus modEventBus = context.getModEventBus();
         modEventBus.addListener(this::commonSetup);
 
-
+        ModEntities.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -57,6 +60,8 @@ public class PeculiarPhantasm
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            EntityRenderers.register
+                    (ModEntities.TROODON.get(), TroodonRenderer:: new);
 
         }
     }
