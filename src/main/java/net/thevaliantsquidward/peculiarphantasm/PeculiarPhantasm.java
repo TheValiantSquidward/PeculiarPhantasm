@@ -14,6 +14,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.thevaliantsquidward.peculiarphantasm.entity.ModEntities;
 import net.thevaliantsquidward.peculiarphantasm.entity.client.TroodonRenderer;
+import net.thevaliantsquidward.peculiarphantasm.item.ModItems;
 import org.slf4j.Logger;
 
 
@@ -30,6 +31,7 @@ public class PeculiarPhantasm
         modEventBus.addListener(this::commonSetup);
 
         ModEntities.register(modEventBus);
+        ModItems.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);

@@ -19,7 +19,7 @@ public class ModEntities {
     public static final RegistryObject<EntityType<Troodon>> TROODON =
             ENTITY_TYPES.register("troodon",
                     () -> EntityType.Builder.of(Troodon::new, MobCategory.WATER_AMBIENT)
-                            .sized(0.5f, 0.5f)
+                            .sized(1.0f, 1.0f)
                             .build(new ResourceLocation(PeculiarPhantasm.MOD_ID, "troodon").toString()));
 
 
