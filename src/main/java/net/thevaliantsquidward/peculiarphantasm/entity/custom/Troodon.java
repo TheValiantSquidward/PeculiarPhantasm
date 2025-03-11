@@ -5,7 +5,9 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
@@ -31,6 +33,11 @@ public class Troodon extends Animal implements GeoEntity {
                 .add(Attributes.MAX_HEALTH, 18D)
                 .add(Attributes.MOVEMENT_SPEED, 0.2D)
                 .build();
+    }
+
+    @Override
+    protected void registerGoals() {
+        this.goalSelector.addGoal(0, new LookAtPlayerGoal(this, Player.class, 10.0F));
     }
 
     // ANIMATION \\
