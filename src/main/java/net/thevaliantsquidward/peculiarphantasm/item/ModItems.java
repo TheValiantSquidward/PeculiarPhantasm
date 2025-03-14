@@ -16,6 +16,15 @@ public class ModItems {
     public static final RegistryObject<Item> TROODON_SPAWN_EGG = ITEMS.register("troodon_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.TROODON, 0x687370, 0x732a37, new Item.Properties()));
 
+    public static final RegistryObject<Item> GIGANHINGA_EGG = ITEMS.register
+            ("giganhinga_egg", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> GOOD_EGG = ITEMS.register
+            ("good_egg", () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> BAD_EGG = ITEMS.register
+            ("bad_egg", () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

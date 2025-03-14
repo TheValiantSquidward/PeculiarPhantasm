@@ -1,5 +1,9 @@
 {
   "item.peculiarphantasm.troodon_spawn_egg" : "Troodon Spawn Egg",
   "entity.peculiarphantasm.troodon" : "Troodon",
-  "effect.peculiarphantasm.incubating" : "Incubating"
+  "effect.peculiarphantasm.incubating" : "Incubating",
+
+  "item.peculiarphantasm.giganhinga_egg" : "Giganhinga Egg",
+  "item.peculiarphantasm.good_egg" : "Good Egg",
+  "item.peculiarphantasm.bad_egg" : "Bad Egg"
 }
