@@ -9,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.thevaliantsquidward.peculiarphantasm.PeculiarPhantasm;
+import net.thevaliantsquidward.peculiarphantasm.entity.custom.Giganhinga;
 import net.thevaliantsquidward.peculiarphantasm.entity.custom.Troodon;
 
 public class ModEntities {
@@ -18,9 +19,15 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<Troodon>> TROODON =
             ENTITY_TYPES.register("troodon",
-                    () -> EntityType.Builder.of(Troodon::new, MobCategory.WATER_AMBIENT)
+                    () -> EntityType.Builder.of(Troodon::new, MobCategory.CREATURE)
                             .sized(1.0f, 1.0f)
                             .build(new ResourceLocation(PeculiarPhantasm.MOD_ID, "troodon").toString()));
+
+    public static final RegistryObject<EntityType<Giganhinga>> GIGANHINGA =
+            ENTITY_TYPES.register("giganhinga",
+                    () -> EntityType.Builder.of(Giganhinga::new, MobCategory.CREATURE)
+                            .sized(1.0f, 1.0f)
+                            .build(new ResourceLocation(PeculiarPhantasm.MOD_ID, "giganhinga").toString()));
 
 
     public static void register(IEventBus eventBus) {

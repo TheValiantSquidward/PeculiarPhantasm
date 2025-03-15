@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "hatch=0": {
+      "model": "peculiarphantasm:block/bad_egg0"
+    },
+    "hatch=1": {
+      "model": "peculiarphantasm:block/bad_egg1"
+    },
+    "hatch=2": {
+      "model": "peculiarphantasm:block/bad_egg2"
+    }
+  }
+}

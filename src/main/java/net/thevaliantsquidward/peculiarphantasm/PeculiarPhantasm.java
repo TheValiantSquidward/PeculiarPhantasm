@@ -12,9 +12,12 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.thevaliantsquidward.peculiarphantasm.block.ModBlocks;
 import net.thevaliantsquidward.peculiarphantasm.effect.ModEffects;
 import net.thevaliantsquidward.peculiarphantasm.entity.ModEntities;
+import net.thevaliantsquidward.peculiarphantasm.entity.client.GiganhingaRenderer;
 import net.thevaliantsquidward.peculiarphantasm.entity.client.TroodonRenderer;
+import net.thevaliantsquidward.peculiarphantasm.entity.custom.Giganhinga;
 import net.thevaliantsquidward.peculiarphantasm.item.ModItems;
 import org.slf4j.Logger;
 
@@ -33,6 +36,7 @@ public class PeculiarPhantasm
 
         ModEntities.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModEffects.register(modEventBus);
 
 
@@ -66,7 +70,8 @@ public class PeculiarPhantasm
         {
             EntityRenderers.register
                     (ModEntities.TROODON.get(), TroodonRenderer:: new);
-
+            EntityRenderers.register
+                    (ModEntities.GIGANHINGA.get(), GiganhingaRenderer:: new);
         }
     }
 }

@@ -4,7 +4,7 @@
   "effect.peculiarphantasm.incubating" : "Incubating",
   "item.peculiarphantasm.troodon_egg" : "Troodon Egg",
 
-  "item.peculiarphantasm.giganhinga_egg" : "Giganhinga Egg",
-  "item.peculiarphantasm.good_egg" : "Good Egg",
-  "item.peculiarphantasm.bad_egg" : "Bad Egg"
+  "block.peculiarphantasm.giganhinga_egg_block" : "Giganhinga Egg",
+  "block.peculiarphantasm.good_egg_block" : "Good Egg",
+  "block.peculiarphantasm.bad_egg_block" : "Bad Egg"
 }
