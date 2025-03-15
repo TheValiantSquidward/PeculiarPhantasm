@@ -8,12 +8,10 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -33,7 +31,7 @@ public class Troodon extends Animal implements GeoEntity {
 
     public Troodon(EntityType<? extends Animal> animal, Level level) {
         super(animal, level);
-
+        ((GroundPathNavigation) this.getNavigation()).setCanOpenDoors(true);
     }
 
     @Override
@@ -61,6 +59,7 @@ public class Troodon extends Animal implements GeoEntity {
             return !(entity instanceof Troodon);
         }));
         this.targetSelector.addGoal(6, (new HurtByTargetGoal(this)));
+        this.goalSelector.addGoal(3, new OpenDoorGoal(this, true));
     }
 
     // ANIMATION \\
