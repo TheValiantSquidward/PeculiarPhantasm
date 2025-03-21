@@ -13,6 +13,7 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.thevaliantsquidward.peculiarphantasm.effect.ModEffects;
@@ -44,21 +45,21 @@ public class Troodon extends Animal implements GeoEntity {
                 .add(Attributes.MAX_HEALTH, 18D)
                 .add(Attributes.MOVEMENT_SPEED, 0.2D)
                 .add(Attributes.ATTACK_DAMAGE, 3.0D)
-                .add(Attributes.FOLLOW_RANGE, 100.0D)
+                .add(Attributes.FOLLOW_RANGE, (double)35.0F)
                 .build();
     }
 
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.8, false));
-        this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.7, false));
+        this.goalSelector.addGoal(8, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 10.0F));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, false, false, entity -> {
+        this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, 8.0F));
+        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, LivingEntity.class, true, entity -> {
             return !(entity instanceof Troodon);
         }));
-        this.targetSelector.addGoal(6, (new HurtByTargetGoal(this)));
+        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)));
         this.goalSelector.addGoal(3, new OpenDoorGoal(this, true));
     }
 
